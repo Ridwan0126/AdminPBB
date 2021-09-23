@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Card, CardHeader, CardBody, Button } from "reactstrap";
-import Logo from "../../assets/img/logoUtama.svg";
+import Logo from "../../assets/img/logo.svg";
 
 export default class Unfinish extends Component {
   render() {
@@ -16,10 +16,10 @@ export default class Unfinish extends Component {
           <img src={Logo} className="rounded mx-auto d-block" alt="logo" />
           <Card>
             <CardHeader tag="h4" align="center">
-              Maaf transaksi Anda belum Selesai, Silahkan Selesaikan di Halaman History
+              Maaf transaksi Anda belum Selesai, Silahkan Selesaikan di Halaman
+              History
             </CardHeader>
             <CardBody className="text-center">
-             
               <p>ORDER ID : {order_id}</p>
               <p>STATUS TRANSAKSI : {transaction_status}</p>
 

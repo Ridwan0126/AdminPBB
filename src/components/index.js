@@ -1,3 +1,3 @@
-import Pesanans from './Pesanans'
+import Pembayaran from "./Pembayaran";
 
-export { Pesanans }
+export { Pembayaran };

@@ -1,4 +1,4 @@
-import { updatePesanan } from "actions/PesananAction";
+import { updatePembayaran } from "actions/PembayaranAction";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
@@ -10,7 +10,7 @@ import {
   Button,
   Spinner,
 } from "reactstrap";
-import Logo from "../../assets/img/logoUtama.svg";
+import Logo from "../../assets/img/logo.svg";
 
 class Finish extends Component {
   constructor(props) {
@@ -38,20 +38,20 @@ class Finish extends Component {
       });
 
       //Masuk ke action update status di history
-      this.props.dispatch(updatePesanan(order_id, transaction_status));
+      this.props.dispatch(updatePembayaran(order_id, transaction_status));
     }
   }
 
   toHistory = () => {
-    window.ReactNativeWebview.postMessage('Selesai');
-  }
+    window.ReactNativeWebView.postMessage("Selesai");
+  };
 
   render() {
     const { order_id, transaction_status } = this.state;
-    const { updatePesananLoading } = this.props;
+    const { updatePembayaranLoading } = this.props;
     return (
       <Row className="justify-content-center mt-5">
-        {updatePesananLoading ? (
+        {updatePembayaranLoading ? (
           <Spinner color="primary" />
         ) : (
           <Col md="4" className="mt-5">
@@ -67,9 +67,19 @@ class Finish extends Component {
                 </p>
 
                 <p>ORDER ID : {order_id}</p>
-                <p>STATUS TRANSAKSI : {transaction_status === "settlement" || transaction_status === "capture" ? "lunas" : transaction_status}</p>
+                <p>
+                  STATUS TRANSAKSI :{" "}
+                  {transaction_status === "settlement" ||
+                  transaction_status === "capture"
+                    ? "lunas"
+                    : transaction_status}
+                </p>
 
-                <Button color="primary" type="submit" onClick={() => this.toHistory()}>
+                <Button
+                  color="primary"
+                  type="submit"
+                  onClick={() => this.toHistory()}
+                >
                   Lanjutkan
                 </Button>
               </CardBody>
@@ -82,7 +92,7 @@ class Finish extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  updatePesananLoading: state.PesananReducer.updatePesaanLoading,
+  updatePembayaranLoading: state.PesananReducer.updatePesaanLoading,
 });
 
 export default connect(mapStateToProps, null)(Finish);

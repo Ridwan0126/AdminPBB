@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
-import LigaReducer from './liga'
-import JerseyReducer from './jersey'
-import AuthReducer from './auth'
-import PesananReducer from './pesanan'
+import { combineReducers } from "redux";
+import FiturReducer from "./fitur";
+import PbbReducer from "./pbb";
+import AuthReducer from "./auth";
+import PembayaranReducer from "./pembayaran";
 
 export default combineReducers({
-    LigaReducer,
-    JerseyReducer,
-    AuthReducer,
-    PesananReducer
-})
+  FiturReducer,
+  PbbReducer,
+  AuthReducer,
+  PembayaranReducer,
+});

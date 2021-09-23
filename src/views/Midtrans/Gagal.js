@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Card, CardHeader, CardBody, Button } from "reactstrap";
-import Logo from "../../assets/img/logoUtama.svg";
+import Logo from "../../assets/img/logo.svg";
 
 export default class Gagal extends Component {
   render() {
@@ -19,7 +19,6 @@ export default class Gagal extends Component {
               Maaf Transaksi Anda Gagal Silahkan Dicoba Lagi
             </CardHeader>
             <CardBody className="text-center">
-             
               <p>ORDER ID : {order_id}</p>
               <p>STATUS TRANSAKSI : {transaction_status}</p>
 
